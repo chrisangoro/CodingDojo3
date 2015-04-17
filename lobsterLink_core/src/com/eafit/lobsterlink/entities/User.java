@@ -1,25 +1,42 @@
 package com.eafit.lobsterlink.entities;
 
+import com.eafit.lobsterlink.exceptions.UserException;
+
 public class User {
 	
 	private String username;
 	private String password;
 	private boolean logueado;
 	
-	public boolean validateUser(String usr, String pass){
-		if(usr == username && pass==password){
-			return true;
-		}else{
-			System.out.println("Usuario o Contraseña incorrectos");
-			return false;
+	public void validateUser(String usr, String pass) throws UserException{
+		if(usr != username || pass!=password){
+			throw new UserException("Usuario o Contraseña incorrectos");
 		}
 	}
 	
-	public void logOut(){
+	public boolean passwordValidation(String pass){
+		if(pass.length() < 6){
+			return false;
+		}else{
+			return true;
+		}
+	}
+	
+	public boolean userValidation(String user){
+		if(user.length() < 4){
+			return false;
+		}else{
+			return true;
+		}
+	}
+	
+	public boolean logOutValidation(){
 		if(logueado == true){
 			logueado = false;
+			return true;
 		}else{
 			System.out.println("not logged in");
+			return false;
 		}
 	}
 
