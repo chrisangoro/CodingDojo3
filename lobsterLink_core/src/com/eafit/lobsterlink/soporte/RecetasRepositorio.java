@@ -12,8 +12,7 @@ import java.util.List;
  * @author felipelondono
  */
 public interface RecetasRepositorio {
-    public List<Receta> consultarRecetas(String nombre,String Descripcion,
-            String ingredientes,String receta);
+    public List<Receta> consultarRecetas();
     public Receta crearReceta(String nombre,String Descripcion,
             String ingredientes,String receta);
     public void guardarReceta(Receta receta);
