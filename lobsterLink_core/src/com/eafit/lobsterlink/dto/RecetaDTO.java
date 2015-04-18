@@ -3,7 +3,16 @@ package com.eafit.lobsterlink.dto;
 public class RecetaDTO {
 	private String nombre;
 	private String ingredientes;
+        private String descripcion;
         private String receta;
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
     public String getIngredientes() {
         return ingredientes;
