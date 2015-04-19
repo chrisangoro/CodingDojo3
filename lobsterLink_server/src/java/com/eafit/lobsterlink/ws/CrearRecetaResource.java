@@ -30,7 +30,7 @@ public class CrearRecetaResource {
     @Path("/crear")
     public void putText(String nombre, String descripcion,String ingredientes,
     String receta) {
-        RecetaDTO dto = new RecetaDTO();
+        RecetaDTO dto;
         dto.setNombre(nombre);
         dto.setDescripcion(descripcion);
         dto.setIngredientes(ingredientes);
