@@ -12,12 +12,11 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
+import com.eafit.lobsterlink.dto.UsuarioDTO;
+import com.eafit.lobsterlink.support.UserRepositorio;
+import com.eafit.lobsterlink.usecases.LogOutUseCase;
 
-/**
- * REST Web Service
- *
- * @author felipelondono
- */
+
 @Path("LogOutUseCase")
 public class LogOutUseCaseResource {
 
@@ -30,16 +29,6 @@ public class LogOutUseCaseResource {
     public LogOutUseCaseResource() {
     }
 
-    /**
-     * Retrieves representation of an instance of com.eafit.lobsterlink.ws.LogOutUseCaseResource
-     * @return an instance of java.lang.String
-     */
-    @GET
-    @Produces("text/plain")
-    public String getText() {
-        //TODO return proper representation object
-        throw new UnsupportedOperationException();
-    }
 
     /**
      * PUT method for updating or creating an instance of LogOutUseCaseResource
@@ -49,5 +38,11 @@ public class LogOutUseCaseResource {
     @PUT
     @Consumes("text/plain")
     public void putText(String content) {
+        UsuarioDTO usrdto;
+        usrdto.setNombre(nombre);
+        usrdto.setPassword(password);
+        LogOutUseCase logout = new LogOutUseCase(repo);
+        login.setParametros(usrdto);
+        login.execute();
     }
 }

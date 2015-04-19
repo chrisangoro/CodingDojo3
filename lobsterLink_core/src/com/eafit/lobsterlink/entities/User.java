@@ -12,6 +12,9 @@ public class User {
 		if(usr != username || pass!=password){
 			throw new UserException("Usuario o Contraseña incorrectos");
 		}
+		else{
+			logueado = true;
+		}
 	}
 	
 	public boolean passwordValidation(String pass){
@@ -30,13 +33,11 @@ public class User {
 		}
 	}
 	
-	public boolean logOutValidation(){
+	public void logOutValidation() throws UserException{
 		if(logueado == true){
 			logueado = false;
-			return true;
 		}else{
-			System.out.println("not logged in");
-			return false;
+			throw new UserException("not logged in");
 		}
 	}
 

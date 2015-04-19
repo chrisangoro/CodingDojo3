@@ -8,4 +8,5 @@ public interface UserRepositorio {
 	public List<User> consultarUsuarios();
 	public void crearUsuario(String nombre, String password);
 	public void save(User user);
+	public void update(User user);
 }
